@@ -20,13 +20,13 @@ It uses external interrupts to detect button presses, holds, and releases with m
 
 ## 📚 API Overview
 
-| Function                     | Parameters | Description                                                            |
-| ---------------------------- | ---------- | ---------------------------------------------------------------------- |
-| `button_handler_init()`      | *(void)*   | Configures pins and enables external interrupts for buttons            |
-| `button_handler()`           | *(void)*   | Checks button events and calls the corresponding user functions        |
-| `button'0..7'_pressed()`     | *(void)*   | Called when button '0..7' is pressed (weak, can be overridden by user) |
-| `button'0..7'_hold()`        | *(void)*   | Called when button '0..7' is held down (weak, can be overridden)       |
-| `button'0..7'_released()`    | *(void)*   | Called when button '0..7' is released (weak, can be overridden)        |
+| Function                     | Parameters | Description                                                                                |
+| ---------------------------- | ---------- | ------------------------------------------------------------------------------------------ |
+| `button_handler_init()`      | *(void)*   | Configures pins and enables external interrupts for buttons                                |
+| `button_handler()`           | *(void)*   | Checks button events and calls the corresponding user functions (place in while(1))        |
+| `button'0..7'_pressed()`     | *(void)*   | Called when button '0..7' is pressed (weak, can be overridden by user)                     |
+| `button'0..7'_hold()`        | *(void)*   | Called when button '0..7' is held down (weak, can be overridden)                           |
+| `button'0..7'_released()`    | *(void)*   | Called when button '0..7' is released (weak, can be overridden)                            |
 
 
 
