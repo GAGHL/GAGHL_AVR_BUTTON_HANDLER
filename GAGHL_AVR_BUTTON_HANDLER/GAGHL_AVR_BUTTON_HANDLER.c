@@ -109,7 +109,7 @@ ISR(INT2_vect){
 ISR(INT3_vect){
 	if ((INT3_PIN & (1 << INT3_BIT)) == 0) {
 		buttonEvent[3] = EVENT_PRESSED; //pressed
-		} else {
+	} else {
 		buttonEvent[3] = EVENT_RELEASED; //released
 	}
 }
@@ -119,7 +119,7 @@ ISR(INT3_vect){
 ISR(INT4_vect){
 	if ((INT4_PIN & (1 << INT4_BIT)) == 0) {
 		buttonEvent[4] = EVENT_PRESSED; //pressed
-		} else {
+	} else {
 		buttonEvent[4] = EVENT_RELEASED; //released
 	}
 }
@@ -129,7 +129,7 @@ ISR(INT4_vect){
 ISR(INT5_vect){
 	if ((INT5_PIN & (1 << INT5_BIT)) == 0) {
 		buttonEvent[5] = EVENT_PRESSED; //pressed
-		} else {
+	} else {
 		buttonEvent[5] = EVENT_RELEASED; //released
 	}
 }
@@ -139,7 +139,7 @@ ISR(INT5_vect){
 ISR(INT6_vect){
 	if ((INT6_PIN & (1 << INT6_BIT)) == 0) {
 		buttonEvent[6] = EVENT_PRESSED; //pressed
-		} else {
+	} else {
 		buttonEvent[6] = EVENT_RELEASED; //released
 	}
 }
@@ -149,7 +149,7 @@ ISR(INT6_vect){
 ISR(INT7_vect){
 	if ((INT7_PIN & (1 << INT7_BIT)) == 0) {
 		buttonEvent[7] = EVENT_PRESSED; //pressed
-		} else {
+	} else {
 		buttonEvent[7] = EVENT_RELEASED; //released
 	}
 }
@@ -201,6 +201,7 @@ void button_handler(void) {
 }
 
 //user override
+
 __weak void button0_pressed(void){
 	PORTA = 0x00;
 }
