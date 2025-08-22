@@ -48,7 +48,7 @@ Copy these files into your AVR project:
 
 int main (void) {
 	
-    DDRA=0x07;
+    DDRA = 0x07;
 	
 	button_handler_init();
 	
