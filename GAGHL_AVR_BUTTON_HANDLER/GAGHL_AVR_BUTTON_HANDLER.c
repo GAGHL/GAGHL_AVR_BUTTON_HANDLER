@@ -6,10 +6,8 @@
  */ 
 
 #include <avr/io.h>
-#include <avr/interrupt.h>
 #include "GAGHL_AVR_BUTTON_HANDLER.h"
 #include "GAGHL_AVR_BUTTON_HANDLER_Pins.h"
-#include <stdint.h>
 
 volatile event_t buttonEvent[8] = {EVENT_IDLE};
 
@@ -276,3 +274,4 @@ __weak void button6_released(void){
 __weak void button7_released(void){
 	PORTA = 0x00;
 }
+
