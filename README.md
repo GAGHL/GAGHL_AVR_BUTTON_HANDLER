@@ -32,13 +32,44 @@ It uses external interrupts to detect button presses, holds, and releases with m
 
 ## 🚀 Getting Started
 
-### Add the files to your project
+### 1. Add the files to your project
 
 Copy these files into your AVR project:
 
 - `GAGHL_AVR_BUTTON_HANDLER.c`
 - `GAGHL_AVR_BUTTON_HANDLER.h`
 - `GAGHL_AVR_BUTTON_HANDLER_Pins.h`
+
+### 2. Example
+```c
+
+#include <avr/io.h>
+#include "GAGHL_AVR_BUTTON_HANDLER.h"
+
+int main (void) {
+	
+    DDRA=0x07;
+	
+	button_handler_init();
+	
+    while (1) {
+		button_handler();
+    }
+}
+
+void button0_pressed(void) {
+	PORTA |= (1 << PA0);
+}
+
+void button0_hold(void) {
+	PORTA |= (1 << PA1);
+}
+
+void button0_released(void) {
+	PORTA |= (1 << PA2);
+}
+
+```
 
 ## 🔧 Requirements
 
