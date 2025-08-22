@@ -43,8 +43,17 @@ void button_handler_init(void) {
 	#elif defined(__AVR_ATmega64__)  || defined(__AVR_ATmega64A__)  || \
 		  defined(__AVR_ATmega128__) || defined(__AVR_ATmega128A__)
 		
-		DDRE &= ~((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
-		PORTE |=  ((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
+		//DDRE &= ~((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
+		INT4_DDR &= ~(1 << INT4_BIT);
+		INT5_DDR &= ~(1 << INT5_BIT);
+		INT6_DDR &= ~(1 << INT6_BIT);
+		INT7_DDR &= ~(1 << INT7_BIT);
+	
+		//PORTE |=  ((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
+		INT4_PORT |= (1 << INT4_BIT);
+		INT5_PORT |= (1 << INT5_BIT);
+		INT6_PORT |= (1 << INT6_BIT);
+		INT7_PORT |= (1 << INT7_BIT);
 
 		EICRB &= ~((1 << ISC41) | (1 << ISC51) | (1 << ISC61) | (1 << ISC71));
 		EICRB |=  ((1 << ISC40) | (1 << ISC50) | (1 << ISC60) | (1 << ISC70));
@@ -53,11 +62,27 @@ void button_handler_init(void) {
 		
 	#elif defined(__AVR_ATmega640__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
 		
-		DDRD &= ~((1 << PD0) | (1 << PD1) | (1 << PD2) | (1 << PD3));
-		PORTD |=  ((1 << PD0) | (1 << PD1) | (1 << PD2) | (1 << PD3));
+		//DDRD &= ~((1 << PD0) | (1 << PD1) | (1 << PD2) | (1 << PD3));
+		//DDRE &= ~((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
+		INT0_DDR &= ~(1 << INT0_BIT);
+		INT1_DDR &= ~(1 << INT1_BIT);
+		INT2_DDR &= ~(1 << INT2_BIT);
+		INT3_DDR &= ~(1 << INT3_BIT);
+		INT4_DDR &= ~(1 << INT4_BIT);
+		INT5_DDR &= ~(1 << INT5_BIT);
+		INT6_DDR &= ~(1 << INT6_BIT);
+		INT7_DDR &= ~(1 << INT7_BIT);
 
-		DDRE &= ~((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
-		PORTE |=  ((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
+		//PORTD |=  ((1 << PD0) | (1 << PD1) | (1 << PD2) | (1 << PD3));
+		//PORTE |=  ((1 << PE4) | (1 << PE5) | (1 << PE6) | (1 << PE7));
+		INT0_PORT |= (1 << INT0_BIT);
+		INT1_PORT |= (1 << INT1_BIT);
+		INT2_PORT |= (1 << INT2_BIT);
+		INT3_PORT |= (1 << INT3_BIT);
+		INT4_PORT |= (1 << INT4_BIT);
+		INT5_PORT |= (1 << INT5_BIT);
+		INT6_PORT |= (1 << INT6_BIT);
+		INT7_PORT |= (1 << INT7_BIT);
 		
 		EICRA &= ~((1 << ISC01) | (1 << ISC11) | (1 << ISC21) | (1 << ISC31));
 		EICRB &= ~((1 << ISC41) | (1 << ISC51) | (1 << ISC61) | (1 << ISC71));
