@@ -11,6 +11,9 @@
 
 #define __weak __attribute__((weak))
 
+#include <stdint.h>
+#include <avr/interrupt.h>
+
 typedef enum {
 	EVENT_IDLE,
 	EVENT_PRESSED,
@@ -48,6 +51,7 @@ void button6_hold(void);
 void button7_hold(void);
 
 void button_handler(void);
+
 
 
 #endif /* GAGHL_AVR_EXTI_Button_Handler_H_ */
